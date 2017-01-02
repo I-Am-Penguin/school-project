@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <canvas id="canvas" width="1000", height="500">Upgrade your browser to play Nam-Cap</canvas>
-    <title>Food!</title>
+    <canvas id="canvas" width="1540", height="675">Upgrade your browser to play Draw in awe</canvas>
+    <title>Draw in awe!</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
      var canvas = document.getElementById("canvas");
@@ -22,8 +22,12 @@
                   ctx.fill();  
                 };
             };
+        
    
-   
+        
+// blue, green, red, pink, black, white, yellow, orange, purple, skyblue
+var colors = ["blue", "#11d835", "#ed1010", "#ed10de", "#000000", "#fcfcfc", "#fcd40a", "#fc8b0a", "#9b0afc", "#0afcdc"];       
+var i = 0;
 
 document.onkeydown = checkKey;
 
@@ -45,25 +49,31 @@ function checkKey(e) {
     }
     else if (e.keyCode == '39') {
        // right arrow
-        
          place1+=10;
     }
+    else if (e.keyCode == '32') {
+    i++;
+}
+else if (e.keyCode == '13') {
+    j++;
+}
 }
        
         
         var place1 = 100;
         var place2 = 100;
-        var size = 10;
-
+        
     var draw = function() {
+         if (i > 9) {
+         i = 0;   
+        };
        ctx.strokeStyle = "Blue";
-        ctx.fillStyle = "Blue";
-        circle(place1, place2, size, false);
-        you.push(place1);
-        you.push(place2)
+        ctx.fillStyle = colors[i];
+        circle(place1, place2, 10, false);
     };
         
-    setInterval(draw, 1);
+        
+    setInterval(draw, 0);                           
     </script>
     </head>
     <body>
